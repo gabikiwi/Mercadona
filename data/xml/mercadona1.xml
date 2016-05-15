@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MercadonaMessage MercadonaMessage="xml">
+  <weighing_device_id>101</weighing_device_id>
+  <message_id>10000001</message_id>
+  <content>2350 g Granny Smith apples</content>
+  <date>2016-05-16 23:59:59</date>  
+</MercadonaMessage>
