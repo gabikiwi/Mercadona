@@ -1,4 +1,4 @@
-package com.mercadona.pos.saf.message;
+package com.mercadona.pos.camel.saf.message;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;

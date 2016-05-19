@@ -1,10 +1,10 @@
-package com.mercadona.pos.saf;
+package com.mercadona.pos.camel.saf;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.main.Main;
 
-import com.mercadona.pos.saf.message.routing.Input;
-import com.mercadona.pos.saf.message.routing.XpathRouteBuilder;
+import com.mercadona.pos.camel.saf.message.routing.Input;
+import com.mercadona.pos.camel.saf.message.routing.XpathRouteBuilder;
 
 
 public class MainApp {

@@ -1,4 +1,4 @@
-package com.mercadona.pos.saf.message;
+package com.mercadona.pos.camel.saf.message;
 
 import java.sql.Time;
 import java.text.MessageFormat;

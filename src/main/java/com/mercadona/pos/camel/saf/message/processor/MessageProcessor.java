@@ -1,4 +1,4 @@
-package com.mercadona.pos.saf.message.processor;
+package com.mercadona.pos.camel.saf.message.processor;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

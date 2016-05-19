@@ -1,4 +1,4 @@
-package com.mercadona.pos.saf.message.routing;
+package com.mercadona.pos.camel.saf.message.routing;
 
 import org.apache.camel.builder.RouteBuilder;
 

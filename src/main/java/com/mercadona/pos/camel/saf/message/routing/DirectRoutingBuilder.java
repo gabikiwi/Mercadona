@@ -1,8 +1,8 @@
-package com.mercadona.pos.saf.message.routing;
+package com.mercadona.pos.camel.saf.message.routing;
 
 import org.apache.camel.builder.RouteBuilder;
 
-import com.mercadona.pos.saf.message.CombineAggregationStrategy;
+import com.mercadona.pos.camel.saf.message.CombineAggregationStrategy;
 
 public class DirectRoutingBuilder extends RouteBuilder {
 

@@ -1,11 +1,11 @@
-package com.mercadona.pos.saf;
+package com.mercadona.pos.camel.saf;
 
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.main.Main;
 
-import com.mercadona.pos.saf.message.MercadonaMessage;
-import com.mercadona.pos.saf.message.routing.DirectRoutingBuilder;
+import com.mercadona.pos.camel.saf.message.MercadonaMessage;
+import com.mercadona.pos.camel.saf.message.routing.DirectRoutingBuilder;
 
 /**
  * Hello world!
