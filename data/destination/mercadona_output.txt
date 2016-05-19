@@ -1,0 +1,2 @@
+Balance Number = 101,message number =  10000001, message content = 2350 g Granny Smith apples,timestamp = '2016-05-16 23 = 59 = 59'
+Balance Number = 102,message number =  10000002, message content = 1500 g strawberries,timestamp = '2016-05-17 23 = 59 = 59'
