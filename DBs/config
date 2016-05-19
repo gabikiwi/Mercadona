@@ -1,0 +1,8 @@
+10.171.78.80:3306
+mercadona
+welcome1
+ connect = DriverManager
+          .getConnection("jdbc:mysql://localhost/mercadona_saf?"
+              + "user=mercadona&password=welcome1");
+              
+https://github.com/iamcal/Flickr-FTPD/blob/master/com/mysql/jdbc/Blob.java

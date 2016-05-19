@@ -50,44 +50,55 @@ public class MySQLAccess {
       Blob b1 = connect.createBlob();
       b1.setBytes(1, blobData);
       
+      
       //ID
       preparedStatement.setInt(1, 10001);
       
-      //BLOB
-      preparedStatement.setBlob(2, b1);
+    //Message_Id
+      preparedStatement.setString(2, "10001");
       
-      //Message_Id
-      preparedStatement.setString(3, null);
-      
-      //Message_Type
-      preparedStatement.setString(4, null);
-      
-      //Priority
-      preparedStatement.setInt(5, 2);
-      
-      //Retry_Count
-      preparedStatement.setInt(6, 2);
-      
+    //Message_Type
+      preparedStatement.setString(3, "xml");
       
       //Time_Stamp
       java.util.Date utilDate = new java.util.Date();
       Calendar cal = Calendar.getInstance();
       cal.setTime(utilDate);    
       
-      preparedStatement.setTimestamp(7, new java.sql.Timestamp(cal.getTimeInMillis()));
+      preparedStatement.setTimestamp(4, new java.sql.Timestamp(cal.getTimeInMillis()));
+      
+      //BLOB
+      preparedStatement.setBlob(5, b1);
+      
+      
+      
+      
+      
+      
+      
+      //Priority
+      preparedStatement.setInt(6, 2);
+      
+      //Retry_Count
+      preparedStatement.setInt(7, 2);
+     
+      
+   
       
       
       //Message_Type
       preparedStatement.setInt(8, 10);
   
-      
+      System.out.println("TEST");
       preparedStatement.executeUpdate();
-
+      
       preparedStatement = connect
           .prepareStatement("SELECT * from kiwi_messaging_module_store");
       resultSet = preparedStatement.executeQuery();
+      
       writeResultSet(resultSet);
 
+     
       // Remove again the insert comment
       preparedStatement = connect
       .prepareStatement("delete from kiwi_messaging_module_store  where id= ? ; ");
