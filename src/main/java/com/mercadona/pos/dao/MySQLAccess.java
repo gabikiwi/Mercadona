@@ -30,16 +30,16 @@ public class MySQLAccess {
       statement = connect.createStatement();
       // Result set get the result of the SQL query
       resultSet = statement
-          .executeQuery("select * from kiwi_messaging_module_store");
+          .executeQuery("select * from kiwi_messaging_module_store LIMIT 0");
       writeResultSet(resultSet);
 
       // PreparedStatements can use variables and are more efficient
       preparedStatement = connect
           .prepareStatement("insert into  kiwi_messaging_module_store values (?, ?, ?, ?, ?, ? , ?, ?)");
-      // "myuser, webpage, datum, summery, COMMENTS from feedback.comments");
+      // "ID, MESSAGE_ID, MESSAGE_TYPE, TIME_STAMP, MESSAGE_DATA, PRIORITY, RETRY_COUNT, TTL from kiwi_messaging_module_store");
       // Parameters start with 1
       
-      
+      //System.out.println(resultSet.getInt("MESSAGE_DATA"));
       //create a sample of the Blob Message
       byte[] blobData = new byte[32];
 
@@ -98,12 +98,12 @@ public class MySQLAccess {
       
       writeResultSet(resultSet);
 
-     
+      
       // Remove again the insert comment
-      preparedStatement = connect
-      .prepareStatement("delete from kiwi_messaging_module_store  where id= ? ; ");
-      preparedStatement.setInt(1, 10001);
-      preparedStatement.executeUpdate();
+    //  preparedStatement = connect
+    //  .prepareStatement("delete from kiwi_messaging_module_store  where id= ? ; ");
+    //  preparedStatement.setInt(1, 10001);
+    //  preparedStatement.executeUpdate();
       
       resultSet = statement
       .executeQuery("select * from kiwi_messaging_module_store");
