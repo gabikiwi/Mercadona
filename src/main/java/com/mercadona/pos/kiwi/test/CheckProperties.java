@@ -21,6 +21,7 @@ public class CheckProperties {
 			prop.load(input);
 
 			// get the property value and print it out
+			
 			System.out.println(prop.getProperty("configuration.pooling.seconds"));
 			System.out.println(prop.getProperty("configuration.connectionTimeout"));
 			System.out.println(prop.getProperty("ticket.messageDestination.CF"));
