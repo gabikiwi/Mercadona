@@ -1,4 +1,4 @@
-package com.mercadona.pos.interf;
+package com.mercadona.pos.core.interf;
 
 import com.mercadona.pos.message.Message;
 import com.mercadona.pos.message.MessageType;

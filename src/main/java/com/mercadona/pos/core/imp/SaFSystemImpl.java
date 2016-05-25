@@ -1,6 +1,6 @@
-package com.mercadona.pos.imp;
+package com.mercadona.pos.core.imp;
 
-import com.mercadona.pos.interf.SaFSystem;
+import com.mercadona.pos.core.interf.SaFSystem;
 import com.mercadona.pos.message.Message;
 import com.mercadona.pos.message.MessageType;
 import com.mercadona.pos.message.Priority;

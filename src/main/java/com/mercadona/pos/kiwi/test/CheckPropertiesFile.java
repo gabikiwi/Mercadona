@@ -3,9 +3,10 @@ package com.mercadona.pos.kiwi.test;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Enumeration;
 import java.util.Properties;
  
-public class CheckProperties {
+public class CheckPropertiesFile {
 	
 	public static void main(String[] args) {
 		
@@ -22,15 +23,23 @@ public class CheckProperties {
 
 			// get the property value and print it out
 			
-			System.out.println(prop.getProperty("configuration.pooling.seconds"));
+			// option 1
+			/*System.out.println(prop.getProperty("configuration.pooling.seconds"));
 			System.out.println(prop.getProperty("configuration.connectionTimeout"));
 			System.out.println(prop.getProperty("ticket.messageDestination.CF"));
 			System.out.println(prop.getProperty("ticket.messageDestination.Queue"));
 			System.out.println(prop.getProperty("ticket.message.default.TTL"));
 			System.out.println(prop.getProperty("ticket.message.default.Priority"));
-			System.out.println(prop.getProperty("ticket.message.default.MaxRetryCount"));
+			System.out.println(prop.getProperty("ticket.message.default.MaxRetryCount"));*/
 
-			// save properties to project root folder
+					
+			Enumeration<?> e = prop.propertyNames();
+			
+			while (e.hasMoreElements()) {
+				String key = (String) e.nextElement();
+				String value = prop.getProperty(key);
+				System.out.println("Key : " + key + ", Value : " + value);
+			}
 			
 
 		} catch (IOException io) {

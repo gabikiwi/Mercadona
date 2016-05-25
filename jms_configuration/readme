@@ -1,0 +1,22 @@
+How to run wslt on Windows:
+======================================
+Step 1:
+C:\Mercadona\wls1212_devzip_update\wls12120\user_projects\domains\mydomain\bin>setDomainEnv.cmd
+
+Step 2:
+C:\Mercadona\wls1212_devzip_update\wls12120\wlserver\server\bin>setWLSEnv.cmd
+
+Step 3:
+
+C:\Mercadona\wls1212_devzip_update\wls12120\wlserver\common\bin>wlst.cmd
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; sup
+port was removed in 8.0
+Unrecognized VM option 'UseSpinning'
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+
+C:\Mercadona\wls1212_devzip_update\wls12120\wlserver\common\bin>set JAVA_HOME=C:\Java\jdk1.7.0_51
+
+
+Step 4:
+C:\Mercadona\workspace_PoC_Mercadona\saf\jms_configuration>java weblogic.WLST createJMS.py
