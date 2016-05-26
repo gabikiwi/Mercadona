@@ -20,3 +20,6 @@ C:\Mercadona\wls1212_devzip_update\wls12120\wlserver\common\bin>set JAVA_HOME=C:
 
 Step 4:
 C:\Mercadona\workspace_PoC_Mercadona\saf\jms_configuration>java weblogic.WLST create_mercadona_jms.py
+
+Step 5:
+ java -jar wljarbuilder.jar -profile wlfullclient5
