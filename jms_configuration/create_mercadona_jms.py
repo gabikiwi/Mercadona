@@ -10,7 +10,7 @@
 # Properties File Location
 #================================
 # If the properties file is external to this script, prepend the filename with the relative path.
-properties = loadProperties("jmsCreate.properties")
+properties = loadProperties("create_mercadona_jms.properties")
 
 #================================
 # Properties File Mappings
@@ -29,8 +29,8 @@ factoryJNDI = v_factoryJNDI
 queueName = v_queueName
 queueJNDI = v_queueJNDI
 mySubDepName = v_mySubDepName
-fileStoreName = v_fileStoreName
-fileStoreDirectory = v_fileStoreDirectory
+#fileStoreName = v_fileStoreName
+#fileStoreDirectory = v_fileStoreDirectory
 
 #================================
 # Connect
@@ -54,18 +54,20 @@ defTargetMB = getMBean("/JMSServers/"+jmsSystemResource)
 #================================
 # Create Filestore
 #================================
-print 'Creating File Store'
-fsMB = getMBean("/FileStores/"+fileStoreName)
-if fsMB is None:
- cd('/')
- cmo.createFileStore(fileStoreName)
- cd('/FileStores/'+fileStoreName)
- cmo.setDirectory(fileStoreDirectory)
+#print 'Creating File Store'
+#fsMB = getMBean("/FileStores/"+fileStoreName)
+#if fsMB is None:
+#cd('/')
+#cmo.createFileStore(fileStoreName)
+# cd('/FileStores/'+fileStoreName)
+# cmo.setDirectory(fileStoreDirectory)
 # Single node server (Admin) example. Production will be Clustered
- set('Targets',jarray.array([ObjectName('com.bea:Name='+targetServer+',Type=Server')], ObjectName))
- print "*** Created Filestore"
-else: 
- print "FileStore already exists... Skipping"
+# set('Targets',jarray.array([ObjectName('com.bea:Name='+targetServer+',Type=Server')], ObjectName))
+# print "*** Created Filestore"
+#else: 
+# print "FileStore already exists... Skipping"
+ 
+ 
 #================================
 # Creating JMS Server
 #================================
@@ -76,9 +78,9 @@ if serverInstanceMBean is None:
  jmsserver1mb = create(jmsServerName,'JMSServer')
  print "Creating JMS Server Target"
  jmsserver1mb.addTarget(servermb)
- print "Set Persistent Store..."
- cd('/JMSServers/'+jmsServerName)
- cmo.setPersistentStore(getMBean('/FileStores/'+fileStoreName))
+# print "Set Persistent Store..."
+# cd('/JMSServers/'+jmsServerName)
+# cmo.setPersistentStore(getMBean('/FileStores/'+fileStoreName))
  print "*** JMS Server Created"
 else:
  print "*** JMS Server already exists... Skipping"
@@ -138,7 +140,7 @@ if newConnectionFactory is None:
  jmsResource = getMBean('/JMSSystemResources/'+jmsSystemResource+'/JMSResource/'+jmsSystemResource)
  newConnectionFactory = jmsResource.createConnectionFactory(factoryName)
  newConnectionFactory.setJNDIName(factoryJNDI)
- #newConnectionFactory.setSubDeploymentName(mySubDepName) Uncomment if default targetting is not applicable
+ #newConnectionFactory.setSubDeploymentName(mySubDepName) Uncomment if default targeting is not applicable
  newConnectionFactory.setDefaultTargetingEnabled(true)
  newConnectionFactory.transactionParams.setXAConnectionFactoryEnabled(false)
 else: 
@@ -159,8 +161,13 @@ else:
 #================================
 # Script Completed - Activate changes
 #================================
-activate()
-dumpStack()
+try:
+    save()
+    activate(block="true")
+    print "script returns SUCCESS"   
+except:
+    print "Error while trying to save and/or activate!!!"
+    dumpStack()
 print "**** JMS Resources Created. Restart the Server to apply changes *****"
 
 exit()
