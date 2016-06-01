@@ -52,10 +52,10 @@ public class MySQLAccess {
       
       
       //ID
-      preparedStatement.setInt(1, 10001);
+      preparedStatement.setInt(1, 10003);
       
     //Message_Id
-      preparedStatement.setString(2, "10001");
+      preparedStatement.setString(2, "1000002");
       
     //Message_Type
       preparedStatement.setString(3, "xml");

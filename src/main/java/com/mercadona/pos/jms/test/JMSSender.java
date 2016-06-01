@@ -14,8 +14,8 @@ public class JMSSender {
    // NOTE: The next two lines set the name of the Queue Connection Factory
    //       and the Queue that we want to use. 	
    // NotificationSenderQueueConnectionFactory
-   private static final String QCF_NAME = "jms/Queue/MercadonaCF";
-   private static final String QUEUE_NAME ="jms/Queue/MercadonaQueue";
+   private static final String QCF_NAME = "jms/MercadonaCF";
+   private static final String QUEUE_NAME ="jms/MercadonaQueue";
    public JMSSender() {
        super();
    }
@@ -130,6 +130,6 @@ public class JMSSender {
        System.out.println("Cleaned up and done.");
    }
    public static void main(String args[]) {
-       sendMessage("test");
+       sendMessage("test1");
    }
 }
